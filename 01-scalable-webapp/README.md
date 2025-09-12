@@ -9,7 +9,7 @@ The architecture follows a **3-tier design** (Presentation, Application, and Dat
 
 ## 🏗️ Architecture
 
-![AWS Architecture Diagram](./diagram.png)
+![AWS Architecture Diagram](./Architecture%20Diagram.png)
 
 **Key Components:**
 - **VPC** with public & private subnets across multiple AZs for high availability.
