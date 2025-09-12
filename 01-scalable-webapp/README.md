@@ -10,7 +10,7 @@ Businesses need web applications that can handle traffic spikes, stay highly ava
 - Implemented cost optimizations with spot instances and S3 lifecycle policies.
 
 ### Architecture Diagram
-![Architecture](./diagrams/architecture.png)
+![Architecture](./Architecture%20Diagram.png)
 
 ### Outcome
 - Application scales automatically to handle high traffic.
