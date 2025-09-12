@@ -39,7 +39,7 @@ output "private_route_table_id" {
 }
 
 
-# output "alb_dns_name" {
-#   description = "The DNS name of the ALB."
-#   value       = aws_lb.WebApp-application-lb.dns_name
-# }
+output "alb_dns_name" {
+  description = "The DNS name of the ALB."
+  value       = aws_lb.WebApp-application-lb.dns_name
+}
