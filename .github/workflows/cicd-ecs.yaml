@@ -1,6 +1,7 @@
 name: CI/CD - FastAPI on AWS ECS (Fargate)
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
