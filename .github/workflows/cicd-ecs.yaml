@@ -54,7 +54,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-            context: /02-cicd-github-EC2/api
+            context: ./02-cicd-github-EC2/api
             push: true
             tags: ${{ secrets.DOCKER_USERNAME }}/ashabtariq12/python-api-aws:latest
 
