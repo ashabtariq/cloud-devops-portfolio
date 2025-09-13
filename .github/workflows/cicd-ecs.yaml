@@ -1,0 +1,98 @@
+name: CI/CD - FastAPI on AWS ECS (Fargate)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '02-cicd-github-EC2/**'   # 👈 Run only if files in this folder change
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '02-cicd-github-EC2/**'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          cd 02-cicd-github-EC2/api
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: |
+          cd 02-cicd-github-EC2/api
+          pytest
+
+  docker-build-and-push:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+      
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+            context: /02-cicd-github-EC2/api
+            push: true
+            tags: ${{ secrets.DOCKER_USERNAME }}/ashabtariq12/python-api-aws:latest
+
+      
+      # - name: Configure AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v4
+      #   with:
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     aws-region: ${{ secrets.AWS_REGION }}
+
+      # - name: Log in to Amazon ECR
+      #   id: login-ecr
+      #   uses: aws-actions/amazon-ecr-login@v2
+
+      # - name: Build, tag, and push Docker image
+      #   run: |
+      #     IMAGE_TAG=latest
+      #     ECR_REPO=${{ secrets.ECR_REPOSITORY }}
+      #     docker build -t $ECR_REPO:$IMAGE_TAG ./02-cicd-github-EC2/api
+      #     docker push $ECR_REPO:$IMAGE_TAG
+
+  # deploy-to-ecs:
+  #   needs: docker-build-and-push
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - name: Configure AWS credentials
+  #       uses: aws-actions/configure-aws-credentials@v4
+  #       with:
+  #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #         aws-region: ${{ secrets.AWS_REGION }}
+
+  #     - name: Deploy to Amazon ECS
+  #       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+  #       with:
+  #         task-definition: 02-cicd-github-EC2/ecs-task-def.json
+  #         service: ${{ secrets.ECS_SERVICE }}
+  #         cluster: ${{ secrets.ECS_CLUSTER }}
+  #         wait-for-service-stability: true
