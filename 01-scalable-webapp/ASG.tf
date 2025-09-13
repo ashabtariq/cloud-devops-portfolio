@@ -3,12 +3,12 @@
 #############################
 resource "aws_launch_template" "WebApp-LaunchConfig" {
   name_prefix   = "WebApp-Webserver"
-  image_id      = "ami-0425c7cd52f6b7613" # Replace with your AMI ID
+  image_id      = "ami-0b09ffb6d8b58ca91" # Replace with your AMI ID
   instance_type = "t3.micro"
   #key_name      = "my-key-pair" # Replace with your key pair name
-
   network_interfaces {
-    associate_public_ip_address = true
+    associate_public_ip_address = false
+    subnet_id = aws_subnet.PrivateSubnet-1.id
     security_groups = [aws_security_group.WebApp-HTTP-ALB-sg.id] # Reference your security group
   }
 
@@ -18,7 +18,7 @@ resource "aws_launch_template" "WebApp-LaunchConfig" {
       Name = "WebApp-Webserver-AGS"
     }
   }
-  #user_data     = file("${path.module}./UserDataScripts/ubuntu-apache.sh") # Path to your script file
+  user_data = base64encode(file("${path.module}./UserDataScripts/yum-apache.sh")) # Path to your script file
 
 }
 

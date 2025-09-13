@@ -15,10 +15,10 @@ The architecture follows a **3-tier design** (Presentation, Application, and Dat
 - **VPC** with public & private subnets across multiple AZs for high availability.
 - **Application Load Balancer (ALB)** to distribute traffic across EC2 instances.
 - **Auto Scaling Group (ASG)** for dynamic scaling of the application layer.
-- **Amazon RDS (Multi-AZ)** for relational database with automated backups.
-- **Amazon S3** for static asset storage and application logs.
-- **CloudFront CDN** for global content delivery with low latency.
-- **Route 53** for DNS management and domain routing.
+- **Amazon RDS (Multi-AZ)** for relational database with automated backups. (Not Included in code)
+- **Amazon S3** for static asset storage and application logs. (Not Included in code)
+- **CloudFront CDN** for global content delivery with low latency. (Not Included in code)
+- **Route 53** for DNS management and domain routing. (Not Included in code)
 - **Terraform** to provision and manage all AWS resources with modular code.
 
 ---
@@ -37,7 +37,7 @@ The architecture follows a **3-tier design** (Presentation, Application, and Dat
 
 - **Cloud Provider:** AWS  
 - **IaC Tool:** Terraform  
-- **Services Used:** VPC, EC2, ALB, ASG, RDS, S3, CloudFront, Route53  
+- **Services Used:** VPC, EC2, ALB, ASG, RDS (Optional), S3 (Optional), CloudFront (Optional), Route53 (Optional)  
 - **Networking:** Multi-AZ, NAT Gateway, Security Groups  
 - **Other:** IAM, CloudWatch, Lifecycle policies  
 
