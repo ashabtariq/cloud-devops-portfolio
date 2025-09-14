@@ -79,9 +79,11 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build, tag, and push Docker image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}   # e.g. python-api-aws
+          IMAGE_TAG: latest
         run: |
-          IMAGE_TAG=latest
-          ECR_REPO=${{ secrets.ECR_REPOSITORY }}
           docker build -t $ECR_REPO:$IMAGE_TAG ./02-cicd-github-EC2/api
           docker push $ECR_REPO:$IMAGE_TAG
 
