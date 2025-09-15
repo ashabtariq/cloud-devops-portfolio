@@ -92,12 +92,17 @@ jobs:
       #     echo "Building and pushing $FULL_IMAGE"
       #     docker build -t $FULL_IMAGE ./02-cicd-github-EC2/api
       #     docker push $FULL_IMAGE
+    
+      
 
   deploy-to-ecs:
     needs: docker-build-and-push
     runs-on: ubuntu-latest
 
     steps:
+      - name: Confirm ecs-task-def.json exists
+        run: ls -l 02-cicd-github-EC2/
+        
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
