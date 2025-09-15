@@ -9,6 +9,8 @@ on:
       - '02-cicd-github-EC2/**'   # 👈 Run only if files in this folder change
 
 
+
+
   pull_request:
     branches:
       - main
