@@ -1,32 +1,30 @@
 {
-  "requiresCompatibilities": [
-    "EC2"
-  ],
+  "family": "fastapi-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::358474422021:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "python-api",
-      "image": "python-api-aws",
-      "memory": 256,
-      "cpu": 256,
+      "name": "fastapi-container",
+      "image": "358474422021.dkr.ecr.us-east-1.amazonaws.com/python-api-aws:latest",
       "essential": true,
       "portMappings": [
         {
           "containerPort": 8000,
+          "hostPort": 8000,
           "protocol": "tcp"
         }
       ],
       "logConfiguration": {
-          "logDriver": "awslogs",
-          "options": {
-              "awslogs-group": "awslogs-python-api-ecs",
-              "awslogs-region": "us-east-1",
-              "awslogs-stream-prefix": "python-api"
-          }
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/fastapi",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
       }
     }
-  ],
-  "volumes": [],
-  "networkMode": "bridge",
-  "placementConstraints": [],
-  "family": "python-api"
+  ]
 }
