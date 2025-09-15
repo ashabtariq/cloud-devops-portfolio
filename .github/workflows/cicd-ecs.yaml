@@ -101,7 +101,7 @@ jobs:
 
     steps:
       - name: Confirm ecs-task-def.json exists
-        run: ls -l ./02-cicd-github-EC2/
+        run: ls -l ./02-cicd-github-EC2
 
       - name: Checkout code
         uses: actions/checkout@v3
