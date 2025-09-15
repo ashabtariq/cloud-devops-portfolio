@@ -93,22 +93,22 @@ jobs:
           docker build -t $FULL_IMAGE ./02-cicd-github-EC2/api
           docker push $FULL_IMAGE
 
-  # deploy-to-ecs:
-  #   needs: docker-build-and-push
-  #   runs-on: ubuntu-latest
+  deploy-to-ecs:
+    needs: docker-build-and-push
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: Configure AWS credentials
-  #       uses: aws-actions/configure-aws-credentials@v4
-  #       with:
-  #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #         aws-region: ${{ secrets.AWS_REGION }}
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
-  #     - name: Deploy to Amazon ECS
-  #       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-  #       with:
-  #         task-definition: 02-cicd-github-EC2/ecs-task-def.json
-  #         service: ${{ secrets.ECS_SERVICE }}
-  #         cluster: ${{ secrets.ECS_CLUSTER }}
-  #         wait-for-service-stability: true
+      - name: Deploy to Amazon ECS
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: 02-cicd-github-EC2/ecs-task-def.json
+          service: ${{ secrets.ECS_SERVICE }}
+          cluster: ${{ secrets.ECS_CLUSTER }}
+          wait-for-service-stability: true

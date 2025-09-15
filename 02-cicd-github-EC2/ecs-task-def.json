@@ -5,22 +5,22 @@
   "containerDefinitions": [
     {
       "name": "python-api",
-      "image": "shabtariq12/python-api-aws",
+      "image": "python-api-aws",
       "memory": 256,
       "cpu": 256,
       "essential": true,
       "portMappings": [
         {
-          "containerPort": 80,
+          "containerPort": 8000,
           "protocol": "tcp"
         }
       ],
       "logConfiguration": {
           "logDriver": "awslogs",
           "options": {
-              "awslogs-group": "awslogs-nginx-ecs",
-              "awslogs-region": "us-east-2",
-              "awslogs-stream-prefix": "nginx"
+              "awslogs-group": "awslogs-python-api-ecs",
+              "awslogs-region": "us-east-1",
+              "awslogs-stream-prefix": "python-api"
           }
       }
     }
@@ -28,5 +28,5 @@
   "volumes": [],
   "networkMode": "bridge",
   "placementConstraints": [],
-  "family": "nginx"
+  "family": "python-api"
 }
