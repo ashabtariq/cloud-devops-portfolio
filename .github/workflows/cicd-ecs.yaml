@@ -119,13 +119,13 @@ jobs:
           aws ecs register-task-definition \
             --cli-input-json file://./02-cicd-github-EC2/ecs-task-def.json
 
-      - name: Deploy to ECS Service
-        run: |
-          aws ecs update-service \
-            --cluster python-api-cluster \
-            --service python-api-cluster-service \
-            --force-new-deployment \
-            --task-definition python-api-cluster:1
+      # - name: Deploy to ECS Service
+      #   run: |
+      #     aws ecs update-service \
+      #       --cluster python-api-cluster \
+      #       --service python-api-cluster-service \
+      #       --force-new-deployment \
+      #       --task-definition python-api-cluster:1
 
 
       - name: Deploy to Amazon ECS
