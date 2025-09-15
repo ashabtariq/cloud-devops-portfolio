@@ -101,8 +101,8 @@ jobs:
 
     steps:
       - name: Confirm ecs-task-def.json exists
-        run: ls -l 02-cicd-github-EC2/
-        
+        run: ls -l ./02-cicd-github-EC2/
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
