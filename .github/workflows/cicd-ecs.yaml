@@ -117,7 +117,7 @@ jobs:
       - name: Register ECS Task Definition
         run: |
           aws ecs register-task-definition \
-            --cli-input-json ./02-cicd-github-EC2/ecs-task-def.json
+            --cli-input-json file://./02-cicd-github-EC2/ecs-task-def.json
 
       - name: Deploy to ECS Service
         run: |
