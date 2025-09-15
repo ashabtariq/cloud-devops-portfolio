@@ -114,10 +114,24 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Deploy to Amazon ECS
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-        with:
-          task-definition: ./02-cicd-github-EC2/ecs-task-def.json
-          service: ${{ secrets.ECS_SERVICE }}
-          cluster: ${{ secrets.ECS_CLUSTER }}
-          wait-for-service-stability: true
+      - name: Register ECS Task Definition
+        run: |
+          aws ecs register-task-definition \
+            --cli-input-json ./02-cicd-github-EC2/ecs-task-def.json
+
+      - name: Deploy to ECS Service
+        run: |
+          aws ecs update-service \
+            --cluster my-cluster \
+            --service my-service \
+            --force-new-deployment \
+            --task-definition python-api-cluster:1
+
+            
+      # - name: Deploy to Amazon ECS
+      #   uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      #   with:
+      #     task-definition: ./02-cicd-github-EC2/ecs-task-def.json
+      #     service: ${{ secrets.ECS_SERVICE }}
+      #     cluster: ${{ secrets.ECS_CLUSTER }}
+      #     wait-for-service-stability: true
