@@ -122,12 +122,12 @@ jobs:
       - name: Deploy to ECS Service
         run: |
           aws ecs update-service \
-            --cluster my-cluster \
-            --service my-service \
+            --cluster python-api-cluster \
+            --service python-api-service \
             --force-new-deployment \
             --task-definition python-api-cluster:1
 
-            
+
       # - name: Deploy to Amazon ECS
       #   uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       #   with:
