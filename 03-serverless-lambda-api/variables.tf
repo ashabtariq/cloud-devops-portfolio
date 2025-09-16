@@ -25,6 +25,19 @@ variable "environment" {
 variable "tableName" {
   description = "Dynamo DB Table Name"
   type        = string
-  default     = "url_shortner"
+  default     = "url_shortner_terra"
 }
+
+variable "functionName" {
+  description = "Lambda Function Name"
+  type        = string
+  default     = "lambda-url_shortner"
+}
+
+variable "lambdaRole" {
+  description = "Lambda Full Access Role"
+  type        = string
+  default     = "arn:aws:iam::358474422021:role/service-role/shorten-role-ix43uo98"
+}
+
 

@@ -1,6 +1,10 @@
 # Local .terraform directories
 **/.terraform/*
-./GarbageCollector
+
+#Other Directories
+GarbageCollector/
+03-serverless-lambda-api/lambda/package/
+
 
 # .tfstate files
 *.tfstate
