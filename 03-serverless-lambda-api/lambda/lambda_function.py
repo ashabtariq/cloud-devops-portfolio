@@ -16,5 +16,4 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': shorten_url
     }
-    print("Hello World")
 
