@@ -12,17 +12,17 @@ This portfolio showcases practical projects that demonstrate my ability to deliv
 - Automated 3-tier architecture (VPC, ALB, Auto Scaling, RDS, S3, CloudFront).
 - Full Infrastructure as Code using Terraform.
 - Cost-optimized setup with lifecycle policies & spot instances.
-[🔗 View Project](./01-scalable-webapp/README.md)
+
 
 ### 2. CI/CD Pipeline with GitHub Actions + ECS
 - Automated container build, test, and deploy pipeline.
 - Integrated AWS ECR, ECS Fargate, and rollback mechanisms.
-[🔗 View Project](./02-ci-cd-pipeline/README.md)
+
 
 ### 3. Serverless App with AWS Lambda + API Gateway
 - Built a serverless URL shortener with Lambda, DynamoDB, and Terraform.
 - API secured with IAM roles and integrated logging.
-[🔗 View Project](./03-serverless-app/README.md)
+
 
 ---
 
@@ -37,7 +37,6 @@ This portfolio showcases practical projects that demonstrate my ability to deliv
 ---
 
 ## 📬 Let’s Connect
-- 🌐 Website: [yourdomain.com](https://yourdomain.com)  
-- 💼 LinkedIn: [linkedin.com/in/yourname](https://linkedin.com/in/yourname)  
-- 📧 Email: you@yourdomain.com
+- 💼 LinkedIn: [https://www.linkedin.com/in/ashab-tariq/]  
+- 📧 Email: ashab.tariq@hotmail.com
 	

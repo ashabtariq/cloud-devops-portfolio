@@ -49,7 +49,7 @@ Python 3.x or Node.js runtime
 
 2️⃣ Clone Repository
 ~~~
-git clone https://github.com/your-username/serverless-url-shortener.git
+git clone https://github.com/ashabtariq/cloud-devops-portfolio
 cd serverless-url-shortener
 ~~~
 
@@ -91,5 +91,3 @@ curl -X POST https://<api-id>.execute-api.<region>.amazonaws.com/prod/shorten \
 --> Amazon DynamoDB – NoSQL storage
 --> Amazon API Gateway – REST API management
 --> Terraform – Infrastructure as Code
-
-Test Done

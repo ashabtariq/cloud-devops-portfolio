@@ -36,21 +36,7 @@ The pipeline automates the full lifecycle from **Build → Test → Deploy** int
 - **Containerization:** Docker  
 - **Container Registry:** Amazon ECR  
 - **Orchestration:** Amazon ECS (Fargate)  
-- **Secrets Management:** AWS Secrets Manager  
-- **App Example:** Node.js backend + React frontend  
+- **App Example:** Python API Example 
 
 ---
 
-## 📂 Repository Structure
-
-```bash
-├── .github/
-│   └── workflows/
-│       └── ci-cd.yml       # GitHub Actions workflow definition
-├── app/
-│   ├── backend/            # Node.js API
-│   └── frontend/           # React frontend
-├── Dockerfile              # Multi-stage Docker build
-├── ecs-task-def.json       # ECS Task Definition
-├── diagram.png             # CI/CD Architecture diagram
-└── README.md               # Project documentation

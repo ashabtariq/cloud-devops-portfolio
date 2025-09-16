@@ -48,7 +48,7 @@ The architecture follows a **3-tier design** (Presentation, Application, and Dat
 1- Clone this repository:
 
 ~~~
-git clone https://github.com/your-username/scalable-webapp-terraform.git
+git clone https://github.com/ashabtariq/cloud-devops-portfolio
 cd scalable-webapp-terraform
 ~~~
 
