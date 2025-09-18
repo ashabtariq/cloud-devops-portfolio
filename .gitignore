@@ -5,6 +5,9 @@
 GarbageCollector/
 03-serverless-lambda-api/lambda/package/
 
+#IN-PROGRESS PROJECTS
+04-Image-Processing-pipeline/
+
 
 # .tfstate files
 *.tfstate
