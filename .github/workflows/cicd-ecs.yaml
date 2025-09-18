@@ -2,11 +2,11 @@ name: CI/CD - FastAPI on AWS ECS (Fargate)
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - '02-cicd-github-EC2/**'   # 👈 Run only if files in this folder change
+ # push:
+ #   branches:
+ #     - main
+ #   paths:
+ #     - '02-cicd-github-EC2/**'   # 👈 Run only if files in this folder change
 
 
 
