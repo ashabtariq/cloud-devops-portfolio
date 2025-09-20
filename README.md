@@ -23,6 +23,11 @@ This portfolio showcases practical projects that demonstrate my ability to deliv
 - Built a serverless URL shortener with Lambda, DynamoDB, and Terraform.
 - API secured with IAM roles and integrated logging.
 
+### **4. Image Processing Pipeline **
+
+- User uploads to **S3 → Event triggers Lambda → Process (resize/convert) → Store in another S3 bucket**
+- Terraform to provision everything.
+
 
 ---
 
