@@ -4,9 +4,10 @@
 #Other Directories
 GarbageCollector/
 03-serverless-lambda-api/lambda/package/
+04-Image-Processing-pipeline/lambdas/resize/build
 
 #IN-PROGRESS PROJECTS
-04-Image-Processing-pipeline/
+#04-Image-Processing-pipeline/
 
 
 # .tfstate files
