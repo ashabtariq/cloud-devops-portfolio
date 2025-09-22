@@ -8,7 +8,7 @@
   "containerDefinitions": [
     {
       "name": "fastapi-container",
-      "image": "358474422021.dkr.ecr.us-east-1.amazonaws.com/python-api-aws:latest",
+      "image": "358474422021.dkr.ecr.us-east-1.amazonaws.com/python-api",
       "essential": true,
       "portMappings": [
         {
