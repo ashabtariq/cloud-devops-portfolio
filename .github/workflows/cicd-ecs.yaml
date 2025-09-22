@@ -54,9 +54,6 @@ jobs:
           pwd
           ls -R
 
-
-
-
     ###################################
     #OPTIONAL DOCKER HUB PUSH         # 
     ###################################
@@ -94,7 +91,7 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }} # <-- Uncomment this line for private Repo 
           #ECR_REGISTRY: public.ecr.aws  
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }} #<-- UNCOMMENT FOR PRIVATE
-          #ECR_PUBLIC_REPOSITORY: ${{ secrets.ECR_PUBLIC_REPOSITORY }}   
+          #ECR_PUBLIC_REPOSITORY: #${{ secrets.ECR_PUBLIC_REPOSITORY }}   
           IMAGE_TAG: latest
         run: |
           FULL_IMAGE=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG 

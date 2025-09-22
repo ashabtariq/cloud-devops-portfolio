@@ -1,0 +1,13 @@
+Step 1: Create the Role
+Go to AWS Console → IAM → Roles → Create role.
+Select trusted entity:
+  Choose AWS service → ECS → ECS Task.
+Click Next: Permissions.
+
+Step 2: Attach Policy
+In the Attach permissions policies screen, search for:
+AmazonECSTaskExecutionRolePolicy
+Select it → Click Next: Tags (optional) → Next → Create role.
+Give it a name: e.g., ecsTaskExecutionRole.
+
+Copy ARN and pase it in ecs-task file
