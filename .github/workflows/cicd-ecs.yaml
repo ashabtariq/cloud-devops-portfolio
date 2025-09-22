@@ -78,29 +78,29 @@ jobs:
     ###################################
     #     AMAZON ECR                  # 
     ###################################
-      # - name: Configure AWS credentials
-      #   uses: aws-actions/configure-aws-credentials@v4
-      #   with:
-      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #     aws-region: ${{ secrets.AWS_REGION }}
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
-      # - name: Log in to Amazon ECR
-      #   id: login-ecr
-      #   uses: aws-actions/amazon-ecr-login@v2
+      - name: Log in to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
 
-      # - name: Build, tag, and push Docker image
-      #   env:
-      #     ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }} # <-- Uncomment this line for private Repo 
-      #     #ECR_REGISTRY: public.ecr.aws  
-      #     ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }} #<-- UNCOMMENT FOR PRIVATE
-      #     #ECR_PUBLIC_REPOSITORY: ${{ secrets.ECR_PUBLIC_REPOSITORY }}   
-      #     IMAGE_TAG: latest
-      #   run: |
-      #     FULL_IMAGE=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG 
-      #     echo "Building and pushing $FULL_IMAGE"
-      #     docker build -t $FULL_IMAGE ./02-cicd-github-EC2/api
-      #     docker push $FULL_IMAGE
+      - name: Build, tag, and push Docker image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }} # <-- Uncomment this line for private Repo 
+          #ECR_REGISTRY: public.ecr.aws  
+          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }} #<-- UNCOMMENT FOR PRIVATE
+          #ECR_PUBLIC_REPOSITORY: ${{ secrets.ECR_PUBLIC_REPOSITORY }}   
+          IMAGE_TAG: latest
+        run: |
+          FULL_IMAGE=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG 
+          echo "Building and pushing $FULL_IMAGE"
+          docker build -t $FULL_IMAGE ./02-cicd-github-EC2/api
+          docker push $FULL_IMAGE
     
       
 
