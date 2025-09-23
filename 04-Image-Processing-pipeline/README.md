@@ -5,7 +5,7 @@ This project demonstrates a **serverless image processing pipeline** on AWS usin
 When a user uploads an image to an S3 bucket, it triggers a **Lambda function** that starts a **specified Steps**. The workflow performs multiple steps:  
 
 1. **Resize the image**  
-2. **Apply watermark**  (Planned) 
+2. **Apply watermark**  (Planned)  
 3. **Store the processed image** in a destination S3 bucket  
 
 All infrastructure is provisioned with **Terraform**, and the system is fully serverless and event-driven.
