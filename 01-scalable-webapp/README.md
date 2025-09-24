@@ -3,7 +3,7 @@
 ## 📌 Project Overview
 This project demonstrates how to design and deploy a **highly available, scalable, and cost-optimized web application** on AWS using **Terraform** for Infrastructure as Code (IaC).
 
-The architecture follows a **3-tier design** (Presentation, Application, and Data layers) and includes advanced cloud features such as **Auto Scaling, CloudFront CDN, Route53 DNS, and Spot Instances** for cost efficiency.
+The architecture follows a **3-tier design** (Presentation, Application, and Data layers) and includes advanced cloud features such as **Auto Scaling, and Spot Instances** for cost efficiency.
 
 ---
 
