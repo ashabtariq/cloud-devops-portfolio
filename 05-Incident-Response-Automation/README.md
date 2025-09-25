@@ -42,7 +42,7 @@ terraform init
 Deploy infrastructure:
 terraform apply
 
-~~~
+```
 
 
 📝 Example Use Case
