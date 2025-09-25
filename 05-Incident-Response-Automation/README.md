@@ -27,21 +27,23 @@ When unusual activity (like suspicious IAM API calls) is detected, the system au
 
 ## ⚙️ Deployment (Terraform)
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/cloud-devops-portfolio.git
+
+```bash
+git clone https://github.com/ashabtariq/cloud-devops-portfolio.git
    cd cloud-devops-portfolio/05-Incident-Response-Automation
 
 
-   Initialize Terraform:
+Initialize Terraform:
 
+~~~
 cd terraform
 terraform init
-
+~~~
 
 Deploy infrastructure:
-
+~~~
 terraform apply
-
+~~~
 
 📝 Example Use Case
 
