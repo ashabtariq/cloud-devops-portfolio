@@ -51,7 +51,7 @@ jobs:
       
       - name: Create a Docker image from a Dockerfile
         run: |
-          docker run -t ${{ secrets.DOCKER_USERNAME }}/python-api-aws:${{ github.event.inputs.tag || 'latest' }} .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/python-api-aws:${{ github.event.inputs.tag || 'latest' }} .
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.28.0
