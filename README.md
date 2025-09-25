@@ -31,7 +31,7 @@ This portfolio showcases practical projects that demonstrate my ability to deliv
 - Use **CloudWatch Alarms + EventBridge + Lambda** to detect anomalies (e.g., unusual IAM API calls).
 - Auto-trigger a Lambda to quarantine the resource (detach IAM keys, isolate EC2 instance).
 
-### 5. Container Security Pipelines
+### 6. Container Security Pipelines
 - Take a containerized app (Node/Python/Go).
 - Add **Trivy/Grype** scans in GitHub Actions before pushing to ECR.
 - Enforce **ECS task roles** and **least privilege IAM policies**.
