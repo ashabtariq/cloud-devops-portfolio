@@ -35,57 +35,43 @@ git clone https://github.com/ashabtariq/cloud-devops-portfolio.git
 
 Initialize Terraform:
 
-~~~
 cd terraform
 terraform init
-~~~
+
 
 Deploy infrastructure:
-~~~
 terraform apply
+
 ~~~
+
 
 📝 Example Use Case
 
 Suspicious IAM activity detected (e.g., iam:CreateAccessKey).
-
 CloudWatch Alarm triggers EventBridge.
-
 EventBridge invokes a Lambda function.
-
 Lambda automatically:
-
-Disables the IAM user’s keys
-
-Logs action to CloudWatch
-
-Optionally sends alert via SNS
+   Disables the IAM user’s keys
+   Logs action to CloudWatch
+   Optionally sends alert via SNS
 
 📂 Project Structure
 05-Incident-Response-Automation/
 ├── terraform/           # Terraform IaC for CloudWatch, EventBridge, Lambda
 ├── lambdas/             # Python Lambda functions
-│   ├── quarantine_ec2.py
 │   └── disable_keys.py
 └── README.md            # Project documentation
 
 📊 Logging & Monitoring
 
 CloudWatch Logs capture all Lambda executions and responses.
-
 CloudWatch Metrics monitor anomaly detection triggers.
-
 SNS (Optional) can be added for security team alerts.
+
 
 🚀 Future Enhancements
 
 Integrate with AWS Security Hub for centralized findings.
-
 Use Step Functions for multi-step incident workflows.
-
 Add Slack/Teams notifications for SOC teams.
 
-🔗 Portfolio
-
-This is part of my Cloud DevOps Portfolio showcasing AWS security and automation projects.
-👉 Check more projects here: Cloud DevOps Portfolio
