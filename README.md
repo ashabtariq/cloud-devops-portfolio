@@ -24,9 +24,17 @@ This portfolio showcases practical projects that demonstrate my ability to deliv
 - API secured with IAM roles and integrated logging.
 
 ### **4. Image Processing Pipeline **
-
 - User uploads to **S3 → Event triggers Lambda → Process (resize/convert) → Store in another S3 bucket**
 - Terraform to provision everything.
+
+### **5. Incident Response Automation on AWS **
+- Use **CloudWatch Alarms + EventBridge + Lambda** to detect anomalies (e.g., unusual IAM API calls).
+- Auto-trigger a Lambda to quarantine the resource (detach IAM keys, isolate EC2 instance).
+
+### 5. **Container Security Pipelines**
+- Take a containerized app (Node/Python/Go).
+- Add **Trivy/Grype** scans in GitHub Actions before pushing to ECR.
+- Enforce **ECS task roles** and **least privilege IAM policies**.
 
 
 ---
@@ -37,7 +45,7 @@ This portfolio showcases practical projects that demonstrate my ability to deliv
 - **CI/CD:** GitHub Actions, GitLab CI, Jenkins  
 - **Containers:** Docker, Kubernetes (EKS)  
 - **Monitoring:** CloudWatch, Prometheus, Grafana  
-- **Security:** IAM, AWS Organizations, GuardDuty  
+- **Security:** IAM, AWS Organizations, GuardDuty, Trivy
 
 ---
 
