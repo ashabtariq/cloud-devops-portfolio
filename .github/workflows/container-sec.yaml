@@ -1,4 +1,4 @@
-name: CI/CD - FastAPI on AWS ECS (Fargate)
+name: CI/CD - Build, Scan and Upload Deploy
 
 on:
   workflow_dispatch:
@@ -7,15 +7,15 @@ on:
       - main
     paths:
       - '06-Container-Secuirty-Pipeline/**'   # 👈 Run only if files in this folder change
-
-
-
-
   pull_request:
     branches:
       - main
     paths:
       - '06-Container-Secuirty-Pipeline/**'
+
+permissions:
+    contents: read # This is needed for the checkout action
+    security-events: write # This is required to upload the SARIF file
 
 jobs:
   Build-and-Test:
