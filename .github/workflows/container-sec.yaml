@@ -58,7 +58,7 @@ jobs:
         with:
             image-ref: ${{ secrets.DOCKER_USERNAME }}/python-api-aws:${{ github.event.inputs.tag || 'latest' }}
             format: 'sarif'
-            scan-type: 'fs'
+            scan-type: 'image'
             exit-code: '1'
             ignore-unfixed: true
             vuln-type: 'os,library'
