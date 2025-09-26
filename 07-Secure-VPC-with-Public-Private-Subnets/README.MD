@@ -58,4 +58,23 @@ terraform plan -out tfplan
 4️⃣ Apply Infrastructure
 ~~~
 terraform apply tfplan
-~~
+~~~
+
+🔑 Accessing Instances
+Bastion Host (Public Subnet)
+~~~
+ssh -i ~/.ssh/id_rsa ubuntu@<BASTION_PUBLIC_IP>
+~~~
+
+Private EC2 (via Bastion)
+~~~
+ssh -i ~/.ssh/id_rsa -J ubuntu@<BASTION_PUBLIC_IP> ubuntu@<PRIVATE_EC2_IP>
+~~~
+
+
+🧹 Cleanup
+
+Destroy resources to avoid charges:
+~~~
+terraform destroy
+~~~
