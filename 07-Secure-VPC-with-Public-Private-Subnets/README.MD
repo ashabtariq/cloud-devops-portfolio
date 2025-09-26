@@ -35,3 +35,27 @@ Security Groups
 ├── outputs.tf    # (optional) useful outputs (bastion IP, private IPs)
 └── README.md     # Project documentation
 ~~~
+
+
+🚀 Deployment Steps
+1️⃣ Prerequisites
+
+Terraform
+- installed
+- AWS CLI configured (aws configure)
+= Existing SSH keypair ~~~ (~/.ssh/id_rsa.pub or update path in code) ~~~
+
+2️⃣ Initialize Terraform
+~~~
+terraform init
+~~~
+
+3️⃣ Plan Infrastructure
+~~~
+terraform plan -out tfplan
+~~~
+
+4️⃣ Apply Infrastructure
+~~~
+terraform apply tfplan
+~~
