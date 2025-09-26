@@ -28,10 +28,10 @@ Security Groups
 
 📂 Files
 
-`bash`
-.
+~~~
+
 ├── main.tf       # Terraform code (VPC, Subnets, IGW, NAT, EC2, SGs)
 ├── variables.tf  # (optional) variables file if you parameterize
 ├── outputs.tf    # (optional) useful outputs (bastion IP, private IPs)
 └── README.md     # Project documentation
-`bash`
+~~~
