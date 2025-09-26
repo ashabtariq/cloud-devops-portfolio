@@ -9,7 +9,7 @@ It demonstrates a best-practice VPC setup with public and private subnets, a bas
 
 🏗️ Architecture
 ~~~
-                     ┌─────────────────────────────┐
+                   ┌─────────────────────────────┐
                    │          VPC (10.0.0.0/16)  │
                    │                             │
                    │   ┌──────────────────────┐  │
@@ -97,3 +97,13 @@ Destroy resources to avoid charges:
 ~~~
 terraform destroy
 ~~~
+
+
+🏷️ Tags
+
+AWS Terraform Cloud Security Bastion Host VPC DevOps
+
+
+✍️ Author
+Ashab Tariq
+Cloud & DevOps Enthusiast | AWS | Terraform | Security Labs
