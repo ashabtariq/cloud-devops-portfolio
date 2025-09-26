@@ -100,17 +100,6 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
       - name: Push Docker image to Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/python-api-aws:${{ github.event.inputs.tag || 'latest' }} # Replace with your actual image name and tag
-      
-      
-        # - name: Build and push Docker image
-      #   uses: docker/build-push-action@v5
-      #   with:
-      #       context: ./06-Container-Secuirty-Pipeline/api
-      #       push: true
-      #       tags: ${{ secrets.DOCKER_USERNAME }}/python-api-aws:${{ github.event.inputs.tag || 'latest' }}
-        
-      
-
         
 
   #   ###################################
