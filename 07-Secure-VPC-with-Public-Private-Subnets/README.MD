@@ -8,13 +8,32 @@ It demonstrates a best-practice VPC setup with public and private subnets, a bas
 ✅ Ideal for cloud security labs, DevOps practice, or portfolio projects.
 
 🏗️ Architecture
-- VPC (10.0.0.0/16)
-- Public Subnet (10.0.0.0/24)
-- Internet Gateway
-- NAT Gateway
-- Bastion Host (SSH allowed only from your IP)
-- Private Subnet (10.0.1.0/24)
-- Private EC2 (SSH allowed only from Bastion Host)
+                     ┌─────────────────────────────┐
+                   │          VPC (10.0.0.0/16)  │
+                   │                             │
+                   │   ┌──────────────────────┐  │
+                   │   │  Public Subnet       │  │
+                   │   │  (10.0.0.0/24)       │  │
+                   │   │                      │  │
+Internet  <──────► │   │ IGW ── NAT GW        │  │
+                   │   │   │                  │  │
+                   │   │ Bastion Host (EC2)   │  │
+                   │   │   [SSH from Your IP] │  │
+                   │   └──────────────────────┘  │
+                   │                             │
+                   │   ┌──────────────────────┐  │
+                   │   │  Private Subnet      │  │
+                   │   │  (10.0.1.0/24)       │  │
+                   │   │                      │  │
+                   │   │ Private EC2          │  │
+                   │   │ [SSH only from       │  │
+                   │   │  Bastion SG]         │  │
+                   │   └──────────────────────┘  │
+                   │                             │
+                   └─────────────────────────────┘
+
+
+
 
 Security Groups
 - Bastion SG → SSH from your IP
@@ -38,12 +57,11 @@ Security Groups
 
 
 🚀 Deployment Steps
-1️⃣ Prerequisites
 
-Terraform
-- installed
+1️⃣ Prerequisites
+- Terraform installed
 - AWS CLI configured (aws configure)
-= Existing SSH keypair ~~~ (~/.ssh/id_rsa.pub or update path in code) ~~~
+- Existing SSH keypair ~~~ (~/.ssh/id_rsa.pub or update path in code) ~~~
 
 2️⃣ Initialize Terraform
 ~~~
