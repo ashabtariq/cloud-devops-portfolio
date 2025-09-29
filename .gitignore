@@ -1,6 +1,7 @@
 # Local .terraform directories
 **/.terraform/*
 
+
 #Other Directories
 GarbageCollector/
 03-serverless-lambda-api/lambda/package/
@@ -49,6 +50,7 @@ terraform.rc
 *.swp
 *.swo
 *.bak
+*.code-workspace
 
 # System files
 .DS_Store
