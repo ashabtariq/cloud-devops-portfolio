@@ -6,6 +6,8 @@ GarbageCollector/
 03-serverless-lambda-api/lambda/package/
 04-Image-Processing-pipeline/lambdas/resize/build
 05-Incident-Response-Automation/lambda/build
+Modules/
+Custom-Modules-Test/
 
 
 #IN-PROGRESS PROJECTS
