@@ -188,12 +188,12 @@ data "aws_ami" "ubuntu" {
 # Bastion Host (Public Subnet)
 # -------------------------
 resource "aws_instance" "bastion" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
-  subnet_id     = aws_subnet.PublicSubnet.id
+  ami                         = data.aws_ami.ubuntu.id
+  instance_type               = "t2.micro"
+  subnet_id                   = aws_subnet.PublicSubnet.id
   associate_public_ip_address = true
-  key_name      = aws_key_pair.ec2_key.key_name
-  vpc_security_group_ids = [aws_security_group.bastion_sg.id]
+  key_name                    = aws_key_pair.ec2_key.key_name
+  vpc_security_group_ids      = [aws_security_group.bastion_sg.id]
 
   tags = {
     Name = "bastion-host"
@@ -204,10 +204,10 @@ resource "aws_instance" "bastion" {
 # Private EC2 (Private Subnet)
 # -------------------------
 resource "aws_instance" "private_ec2" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = "t2.micro"
-  subnet_id     = aws_subnet.PrivateSubnet.id
-  key_name      = aws_key_pair.ec2_key.key_name
+  ami                    = data.aws_ami.ubuntu.id
+  instance_type          = "t2.micro"
+  subnet_id              = aws_subnet.PrivateSubnet.id
+  key_name               = aws_key_pair.ec2_key.key_name
   vpc_security_group_ids = [aws_security_group.private_sg.id]
 
   tags = {

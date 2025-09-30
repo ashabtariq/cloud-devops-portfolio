@@ -9,6 +9,7 @@ GarbageCollector/
 05-Incident-Response-Automation/lambda/build
 Modules/
 Custom-Modules-Test/
+Packer-AMI/
 
 
 #IN-PROGRESS PROJECTS
