@@ -10,12 +10,14 @@ GarbageCollector/
 Modules/
 Custom-Modules-Test/
 Packer-AMI/
+pythonscripts/
 
 
 #IN-PROGRESS PROJECTS
 #04-Image-Processing-pipeline/
 #05-Incident-Response-Automation/
 06-EC2-Ansible/
+08-ai-powered-ids/
 #06-Container-Secuirty-Pipeline/
 
 
