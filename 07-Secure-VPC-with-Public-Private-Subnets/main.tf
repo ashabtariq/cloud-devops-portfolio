@@ -1,17 +1,8 @@
-provider "aws" {
-  region = "us-east-1"
-}
+# provider "aws" {
+#   region = "us-east-1"
+# }
 
 
-terraform {
-  backend "s3" {
-    bucket         = "buildeedev-tfstate-dev"
-    key            = "envs/dev/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "buildeedev-tf-locks-dev"
-    encrypt        = true
-  }
-}
 
 
 # -------------------------
